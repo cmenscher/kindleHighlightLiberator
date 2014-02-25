@@ -19,6 +19,6 @@ A couple of other notes:
 
 - This has only been tested in Chrome for OSX. Let me know if it doesn't work on your browser of choice, but it will need to be modern as the JSON download functionality relies on HTML5 support.
 
-- You might run into weirdness if you have highlights with strange characters or even HTML tags. Amazon has put **very** little work into the Kindle Highlights page, and outputs symbols including < and > without converting to safe formats like HTML character entities.
+- You might run into weirdness if you have highlights with strange characters or even HTML tags. Amazon has put **very** little work into the Kindle Highlights page, which outputs symbols and characters (including raw < and >) without converting to safe formats like HTML character entities.  Seriously, if you highlight HTML code in your books you'll break the rendering of the highlights page.
 
 This bookmarklet might break at some point if Amazon decides to change the structure of https://kindle.amazon.com/your_highlights. **However, this page has remained virtually unchanged since at least 2010.** (It's still using jQuery 1.2.6 for chrissakes.) It's this insulting lack of motivation to provide readers with rich tools for managing and interacting with their Kindle highlights that inspired me to create this bookmarklet.
