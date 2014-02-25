@@ -60,7 +60,6 @@
                 'cover': "http://images.amazon.com/images/P/" + asin + ".01.TZZ.jpg",
             }
 
-            //_this.imported.push(bookdata);
             _this.progress(bookdata);
             _this.getNextBook();
         },
@@ -69,16 +68,16 @@
             var _this = this;
             var coverImg = "http://images.amazon.com/images/P/" + bookdata.asin + ".01.TZZ.jpg";
 
-            _this.totalHighlights += bookdata.highlightedText.length; //used for desktop notification
-            var word = "highlights";
-            if(bookdata.highlightedText.length === 1) {
-                word = "highlight";
+            _this.totalHighlights += bookdata.highlightedText.length;
+            var word = "highlight";
+            if(bookdata.highlightedText.length > 1) {
+                word = word+"s";
             }
 
             _this.imported.unshift(bookdata);
 
-            $("#currentCover").html("<img src='" + coverImg + "'>");
-            $("#currentBook").html(bookdata.highlightedText.length + " " + word + " from \"" + bookdata.title + "\"");
+            $("#cv").html("<img src='" + coverImg + "'>");
+            $("#cb").html(bookdata.highlightedText.length + " " + word + " from \"" + bookdata.title + "\"");
         },
 
         saveData: function (data, fileName) {
@@ -110,16 +109,23 @@
             $("#khl").remove();
             delete window.KHL;
 
-            console.log("Highlights import complete!");
+            // console.log("Highlights import complete!");
         },
 
         start: function() {
             var _this = this;
-            _this.getNextBook();
 
-            $("body").prepend("<div id='khl' style='position: fixed; width: 100%; height: 120px; background-color: rgba(100, 100, 100, .75); border: 1px solid black; z-index: 1000;'><div style='display: block; position: relative; margin: 0px 0px 0px 50px; height: 100%; line-height: 120px; font-size: 18px; color: white;'><span id='currentCover' style='display: inline-block; width: 75px; height: 110px; margin: 5px 25px 5px 0px;'></span><span id='currentBook' style='display: inline-block; position: absolute; margin: auto; height: 100%; line-height: 120px;'>IMPORTING YOUR HIGHLIGHTS...</span></div></div>");
-
-            console.log("Highlights import has begun...");
+            if(window.location.href != "https://kindle.amazon.com/your_highlights") { 
+                if(confirm("You must be logged into http://kindle.amazon.com/your_highlights to save your highlights. Go there now?")) {
+                    window.location.href = "https://kindle.amazon.com/your_highlights";
+                } else {
+                    return false;
+                }
+            } else {
+                _this.getNextBook();
+                $("body").prepend("<div id='khl' style='position: fixed; width: 100%; height: 120px; background-color: rgba(100, 100, 100, .75); border: 1px solid black; z-index: 1000;'><div style='display: block; position: relative; margin: 0px 0px 0px 50px; height: 100%; line-height: 120px; font-size: 18px; color: white;'><span id='cv' style='display: inline-block; width: 75px; height: 110px; margin: 5px 25px 5px 0px;'></span><span id='cb' style='display: inline-block; position: absolute; margin: auto; height: 100%; line-height: 120px;'>IMPORTING HIGHLIGHTS...</span></div></div>");
+                // console.log("Highlights import has begun...");
+            }
         }
     }
 })(window); 
