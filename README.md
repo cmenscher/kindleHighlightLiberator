@@ -21,4 +21,4 @@ A couple of other notes:
 
 - You might run into weirdness if you have highlights with strange characters or even HTML tags. Amazon has put **very** little work into the Kindle Highlights page, and outputs symbols including < and > without converting to safe formats like HTML character entities.
 
-This bookmarklet might break at some point if Amazon decides to change the structure of the page. However, the https://kindle.amazon.com/your_highlights page **has remained virtually unchanged since at least 2010**. (It's still using jQuery 1.2.6 for chrissakes.) It's this insulting lack of motivation to provide readers with rich tools for managing and interacting with their Kindle highlights that inspired me to create this bookmarklet.
+This bookmarklet might break at some point if Amazon decides to change the structure of https://kindle.amazon.com/your_highlights. **However, this page has remained virtually unchanged since at least 2010.** (It's still using jQuery 1.2.6 for chrissakes.) It's this insulting lack of motivation to provide readers with rich tools for managing and interacting with their Kindle highlights that inspired me to create this bookmarklet.
