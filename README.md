@@ -11,7 +11,7 @@ To use this bookmarklet...
 
 4. Login to https://kindle.amazon.com and click the "Your Highlights" link.
 
-5. Once loaded, click the bookmarklet. DO NOT SCROLL! The bookmarklet works with the page's native scrolling functionality to load your highlights. If you scroll, your highlights might be missed.
+5. Once loaded, click the bookmarklet.
 
 You should see a nice progress report at the top of the page, and at the end of the highlights processing you will be prompted to save a .json file to your machine. Easy peasy, lemon squeezy. I haven't tested this with an account with only one page of highlights. Theoretically it will work, but I have no way of testing that since I have over 1,000 in my account. Please let me know if you run into problems!
 
