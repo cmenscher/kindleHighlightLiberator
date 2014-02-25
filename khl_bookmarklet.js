@@ -97,7 +97,7 @@
             var _this = this;
 
             var currentdate = new Date(); 
-            var datetime = currentdate.getFullYear() + "-" + currentdate.getMonth() + "-" + currentdate.getDate();
+            var datetime = currentdate.getFullYear() + "-" + (currentdate.getMonth()+1) + "-" + currentdate.getDate();
             var filename = "kindle_highlights_" + datetime + ".json";
 
             var data = {};
