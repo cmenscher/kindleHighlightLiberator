@@ -128,4 +128,5 @@
             }
         }
     }
-})(window); 
+})(window);
+KHL.start(); 
